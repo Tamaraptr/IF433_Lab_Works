@@ -18,4 +18,8 @@ fun main() {
     ev.accelerate()   // dari ElectricCar (final override)
     ev.honk()         // diwarisi dari Car
     ev.openTrunk()    // diwarisi dari Car
+
+    val emp = Employee("Andi", 5_000_000)
+    emp.work()
+    println(emp.calculateBonus())
 }
