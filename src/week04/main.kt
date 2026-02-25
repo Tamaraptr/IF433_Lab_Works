@@ -26,4 +26,8 @@ fun main() {
     val manager = Manager("Budi", 10_000_000)
     manager.work()
     println(manager.calculateBonus())
+
+    val dev = Developer("Siti", 8_000_000, "Kotlin")
+    dev.work()
+    println(dev.calculateBonus())
 }
