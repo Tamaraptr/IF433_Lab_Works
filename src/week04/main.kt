@@ -22,4 +22,8 @@ fun main() {
     val emp = Employee("Andi", 5_000_000)
     emp.work()
     println(emp.calculateBonus())
+
+    val manager = Manager("Budi", 10_000_000)
+    manager.work()
+    println(manager.calculateBonus())
 }
