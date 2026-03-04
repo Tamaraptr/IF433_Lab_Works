@@ -1,22 +1,21 @@
 package oop_00000130035_tamaraputrisalwa.week05
 
 fun main() {
-    val dosen1 = Dosen( nama = "Pak Alex", nind ="0123456")
-    val admin1 = Admin( nama = "Bu Siti")
+    println("=== AKTIFITAS PEGAWAI ===")
 
-    // Polymorphic Collection List yang berisi tipe Parent, tapi isisnya object anak
+    val dosen1 = Dosen(nama = "Pak Alex", nind = "0123456")
+    val admin1 = Admin(nama = "Bu Siti")
+
     val daftarPegawai: List<Pegawai> = listOf(dosen1, admin1)
 
-    println("=== AKTIFITAS PEGAWAI ===")
     for (pegawai in daftarPegawai) {
-        // Pemanggilan Runtime Polymorphism
+
         pegawai.bekerja()
 
-        // pegawai.mengajar() // INI AKAN EROR karena tipe referensinya adalah pegawai
-        // Smart Casting dengan is dan when
         when (pegawai) {
             is Dosen -> {
-                println("=> Terdeteksi sebagai Dosen (NIDN: $pegawai.nidn)")
+                println("=> Terdeteksi sebagai Dosen (NIDN: ${pegawai.nind})")
+                pegawai.mengajar()
             }
             is Admin -> {
                 println("=> Terdeteksi sebagai Admin")
@@ -25,6 +24,10 @@ fun main() {
         }
         println("---------------------------------")
     }
+
+
+    println("\n=== MATH HELPER (OVERLOADING) ===")
+
     val math = MathHelper()
 
     val luasPersegi = math.hitungLuas(4)
@@ -36,21 +39,16 @@ fun main() {
     val luasLingkaran = math.hitungLuas(7.0)
     println("Luas Lingkaran (r = 7.0): $luasLingkaran")
 
-    val myWallet = EWallet("Tamara", 100000.0)
 
-    myWallet.processPayment(25000.0)
-    println("-----")
+    println("\n=== SIMULASI SISTEM PEMBAYARAN ===")
 
-    myWallet.processPayment(90000.0)
-    println("-----")
+    val eWallet = EWallet("Tamara", 50000.0)
+    val creditCard = CreditCard("Tamara", 100000.0)
 
-    myWallet.topUp(50000.0);
+    val paymentMethods: List<PaymentMethod> = listOf(eWallet, creditCard)
 
-    val myCard = CreditCard("Tamara", 500000.0)
-
-    myCard.processPayment(200000.0)
-    println("-----")
-
-    myCard.processPayment(350000.0)
-
+    for (method in paymentMethods) {
+        method.processPayment(75000.0)
+        println("---------------------------------")
+    }
 }
