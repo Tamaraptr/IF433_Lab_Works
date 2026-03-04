@@ -44,5 +44,13 @@ fun main() {
     myWallet.processPayment(90000.0)
     println("-----")
 
-    myWallet.topUp(50000.0)
+    myWallet.topUp(50000.0);
+
+    val myCard = CreditCard("Tamara", 500000.0)
+
+    myCard.processPayment(200000.0)
+    println("-----")
+
+    myCard.processPayment(350000.0)
+
 }
