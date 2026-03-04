@@ -35,4 +35,14 @@ fun main() {
 
     val luasLingkaran = math.hitungLuas(7.0)
     println("Luas Lingkaran (r = 7.0): $luasLingkaran")
+
+    val myWallet = EWallet("Tamara", 100000.0)
+
+    myWallet.processPayment(25000.0)
+    println("-----")
+
+    myWallet.processPayment(90000.0)
+    println("-----")
+
+    myWallet.topUp(50000.0)
 }
