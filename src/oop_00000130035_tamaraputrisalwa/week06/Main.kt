@@ -1,38 +1,18 @@
 package oop_00000130035_tamaraputrisalwa.week06
 
-fun processCheckout(method: PaymentMethod, amount: Double) {
-    println("-> Memulai checkout...")
-    method.pay(amount) // Dynamic polymorphism in action
-}
-
 fun main() {
-    val myWatch = Smartwatch()
-    myWatch.showTime()
 
-    val myPhone = Smartphone()
-    myPhone.turnOn()
+    val hub = SmartHomeHub()
 
-    val pay1 = Gopay()
-    val pay2 = CreditCard()
+    val lamp = SmartLamp("L01", "Lampu Ruang Tamu")
+    val speaker = SmartSpeaker("S01", "Google Nest")
+    val cctv = SmartCCTV("C01", "CCTV Teras")
 
-    println("\n== TESTING CHECKOUT ===")
-    processCheckout(pay1, amount = 50000.0)
-    processCheckout(pay2, amount = 150000.0)
+    hub.addDevice(lamp)
+    hub.addDevice(speaker)
+    hub.addDevice(cctv)
 
-    val lamp = SmartLamp("L001", "Lampu Ruang Tamu")
+    println("\nMematikan semua perangkat...")
 
-    lamp.turnOn()
-    lamp.turnOff()
-
-    val speaker = SmartSpeaker("SP01", "Google Nest")
-
-    speaker.turnOn()
-    speaker.playMusic("Perfect - Ed Sheeran")
-    speaker.turnOff()
-
-    val cctv = SmartCCTV("C001", "CCTV Pintu Depan")
-
-    cctv.turnOn()
-    cctv.turnOff()
+    hub.turnOffAllSwitches()
 }
-
