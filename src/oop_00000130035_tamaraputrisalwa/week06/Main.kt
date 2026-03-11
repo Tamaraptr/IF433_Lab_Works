@@ -29,5 +29,10 @@ fun main() {
     speaker.turnOn()
     speaker.playMusic("Perfect - Ed Sheeran")
     speaker.turnOff()
+
+    val cctv = SmartCCTV("C001", "CCTV Pintu Depan")
+
+    cctv.turnOn()
+    cctv.turnOff()
 }
 
