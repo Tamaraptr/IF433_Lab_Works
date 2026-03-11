@@ -18,4 +18,16 @@ fun main() {
     println("\n== TESTING CHECKOUT ===")
     processCheckout(pay1, amount = 50000.0)
     processCheckout(pay2, amount = 150000.0)
+
+    val lamp = SmartLamp("L001", "Lampu Ruang Tamu")
+
+    lamp.turnOn()
+    lamp.turnOff()
+
+    val speaker = SmartSpeaker("SP01", "Google Nest")
+
+    speaker.turnOn()
+    speaker.playMusic("Perfect - Ed Sheeran")
+    speaker.turnOff()
 }
+
