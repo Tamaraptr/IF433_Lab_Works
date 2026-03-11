@@ -1,8 +1,21 @@
 package oop_00000130035_tamaraputrisalwa.week06
 
+fun processCheckout(method: PaymentMethod, amount: Double) {
+    println("-> Memulai checkout...")
+    method.pay(amount) // Dynamic polymorphism in action
+}
+
 fun main() {
-    val watch = Smartwatch()
-    watch.showTime()
-    watch.connectToBluetooth()
-    watch.chargeBattery()
+    val myWatch = Smartwatch()
+    myWatch.showTime()
+
+    val myPhone = Smartphone()
+    myPhone.turnOn()
+
+    val pay1 = Gopay()
+    val pay2 = CreditCard()
+
+    println("\n== TESTING CHECKOUT ===")
+    processCheckout(pay1, amount = 50000.0)
+    processCheckout(pay2, amount = 150000.0)
 }
